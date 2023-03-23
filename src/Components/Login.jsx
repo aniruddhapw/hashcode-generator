@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+import { BrowserRouter as  Link } from "react-router-dom";
+
 import bcrypt from 'bcryptjs';
+import Signup from "./Signup";
 
 const Login = () => {
   const [email, setUsername] = useState("");
@@ -37,6 +40,7 @@ const Login = () => {
           // alert("Enter Correct Credentials");
         } else if (response.data[i].hashedPassword !== bcrypt.hashSync(password, 10)) {
           password_check = true;
+          email_check=false;
           login = false;
         } else {
           login = false;
@@ -47,9 +51,9 @@ const Login = () => {
 
         console.log("succesfull");
         navigate("/home");
-      } else if (email_check === true) {
+      } else if (email_check === true && password_check===false) {
         alert("Enter correct email");
-      } else if (password_check === false) {
+      } else if (password_check === true) {
         alert("Enter correct password");
       } else {
         alert("Both email and password are wrong");
@@ -78,6 +82,9 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
+        <p>Dont have an account? </p>
+        <button onClick={()=>{navigate("/signup")}}>Sign up</button>
+        {/* <Link to="/signup">Signup</Link> */}
       </form>
     </div>
   );
