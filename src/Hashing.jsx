@@ -17,13 +17,13 @@ const handleTextInput = async (e) => {
   let result = '';
 
   // Get the current active algorithm and hash the value using it.
-  if (algorithm == 'sha1') {
+  if (algorithm === 'sha1') {
       result = await sha1(value);
-  } else if (algorithm == 'sha256') {
+  } else if (algorithm === 'sha256') {
       result = await sha256(value);
-  } else if (algorithm == 'sha384') {
+  } else if (algorithm === 'sha384') {
       result = await sha384(value);
-  } else if (algorithm == 'sha512') {
+  } else if (algorithm === 'sha512') {
       result = await sha512(value);
   }
 
@@ -45,13 +45,13 @@ const handleFileInput = (e) => {
       let result = '';
 
       // Hashing the content based on the active algorithm
-      if (algorithm == 'sha1') {
+      if (algorithm === 'sha1') {
           result = await sha1(fr.result);
-      } else if (algorithm == 'sha256') {
+      } else if (algorithm === 'sha256') {
           result = await sha256(fr.result);
-      } else if (algorithm == 'sha384') {
+      } else if (algorithm === 'sha384') {
           result = await sha384(fr.result);
-      } else if (algorithm == 'sha512') {
+      } else if (algorithm === 'sha512') {
           result = await sha512(fr.result);
       }
 
@@ -77,15 +77,15 @@ const handleAlgorithmChange = async (e) => {
   if (text_input) {
 
       // Hash the text based on the selected algorithm
-      if (value == 'sha1') {
+      if (value === 'sha1') {
           result = await sha1(text_input);
-      } else if (value == 'sha256') {
+      } else if (value === 'sha256') {
           result = await sha256(text_input);
       }
-      else if (value == 'sha384') {
+      else if (value === 'sha384') {
           result = await sha384(text_input);
       }
-      else if (value == 'sha512') {
+      else if (value === 'sha512') {
           result = await sha512(text_input);
       }
 
@@ -95,13 +95,13 @@ const handleAlgorithmChange = async (e) => {
   if (file_input) {
 
       // Hash the file content based on the selected algorithm
-      if (value == 'sha1') {
+      if (value === 'sha1') {
           result = await sha1(file_input);
-      } else if (value == 'sha256') {
+      } else if (value === 'sha256') {
           result = await sha256(file_input);
-      } else if (value == 'sha384') {
+      } else if (value === 'sha384') {
           result = await sha384(file_input);
-      } else if (value == 'sha512') {
+      } else if (value === 'sha512') {
           result = await sha512(file_input);
       }
 
