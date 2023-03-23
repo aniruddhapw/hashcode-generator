@@ -116,7 +116,7 @@ const handleAlgorithmChange = async (e) => {
   return (
     <div className="hashing-container">
       <div className="hashing-content">
-        // Start: Hashing form
+      
         <div className="hashing-form">
           <h4 className="hashing-form-heading">Input</h4>
           <form>
@@ -165,7 +165,7 @@ const handleAlgorithmChange = async (e) => {
             </div>
           </form>
         </div>
-        // End: Hashing form
+        
         <div className="hashed-output">
           <h4 className="hashed-algorithm-heading">Output</h4>
           <div className="hashed-algorithm-container">
